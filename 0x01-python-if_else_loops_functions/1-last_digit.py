@@ -2,19 +2,19 @@
 import random
 number = random.randint(-10000, 10000)
 
-snumber = str(number)
-last_digit = snumber[-1]
-last_digit = int(last_digit)
+snum = str(number)
+last = snum[-1]
+last = int(last)
 
 if number > 0:
-    if last_digit > 5:
-        print(f"Last digit of {snumber} is {last_digit} and is greater than 5")
-    elif last_digit == 0:
-        print(f"Last digit of {snumber} is {last_digit} and is 0")
+    if last > 5:
+        print(f"Last digit of {snum} is {last} and is greater than 5")
+    elif last == 0:
+        print(f"Last digit of {snum} is {last} and is 0")
     else:
-        print(f"Last digit of {snumber} is {last_digit} and is less than 6 and not 0")
+        print(f"Last digit of {snum} is {last} and is less than 6 and not 0")
 else:
-    if last_digit == 0:
-        print(f"Last digit of {snumber} is {last_digit} and is 0")
+    if last == 0:
+        print(f"Last digit of {snum} is {last_digit} and is 0")
     else:
-        print(f"Last digit of {snumber} is -{last_digit} and is less than 6 and not 0")
+        print(f"Last digit of {snum} is -{last} and is less than 6 and not 0")
