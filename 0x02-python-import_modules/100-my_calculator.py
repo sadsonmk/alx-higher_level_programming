@@ -13,13 +13,17 @@ if __name__ == "__main__":
         arg2 = argv[2]
         arg3 = int(argv[3])
         if argv[2] == '+':
-            print("{} + {} = {}".format(arg1, arg3, add(arg1, arg3)))
+            print("{:d} + {:d} = {:d}".format(arg1, arg3, add(arg1, arg3)))
+            exit(0)
         elif argv[2] == '-':
-            print("{} - {} = {}".format(arg1, arg3, sub(arg1, arg3)))
+            print("{:d} - {:d} = {:d}".format(arg1, arg3, sub(arg1, arg3)))
+            exit(0)
         elif argv[2] == '*':
-            print("{} * {} = {}".format(arg1, arg3, mul(arg1, arg3)))
+            print("{:d} * {:d} = {:d}".format(arg1, arg3, mul(arg1, arg3)))
+            exit(0)
         elif argv[2] == 'div':
-            print("{} / {} = {}".format(arg1, arg3, div(arg1, arg3)))
+            print("{:d} / {:d} = {:d}".format(arg1, arg3, div(arg1, arg3)))
+            exit(0)
         elif arg2 != '+' or arg2 != '-' or arg2 != '*' or arg2 != '/':
             print("Unknown operator. Available operators: +, -, * and /")
             exit(1)
