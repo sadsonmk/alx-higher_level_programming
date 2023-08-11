@@ -13,7 +13,7 @@ if __name__ == "__main__":
         for arg in argv:
             if arg == argv[0]:
                 continue
-            print("{}: {}".format((num), arg))
+            print("{}: {}".format(num, arg))
             num = num + 1
     else:
         print("{} arguments:".format(length - 1))
@@ -21,7 +21,7 @@ if __name__ == "__main__":
         for arg in argv:
             if arg == argv[0]:
                 continue
-            print("{}: {}".format((num), arg))
+            print("{}: {}".format(num, arg))
             num = num + 1
 
 
