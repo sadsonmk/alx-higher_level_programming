@@ -19,9 +19,10 @@ if __name__ == "__main__":
         elif argv[2] == '*':
             print("{} * {} = {}".format(arg1, arg3, mul(arg1, arg3)))
         elif argv[2] == 'div':
-            if arg3 == 0:
-                exit(1)
-            print("{} / {} = {}".format(arg1, arg3, div(arg1, arg3)))
+            try:
+                print("{} / {} = {}".format(arg1, arg3, div(arg1, arg3)))
+            except ZeroDivisionError:
+                return None
         elif arg2 != '+' or arg2 != '-' or arg2 != '*' or arg2 != '/':
             print("Unknown operator. Available operators: +, -, * and /")
             exit(1)
