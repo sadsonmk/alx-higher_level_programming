@@ -23,5 +23,3 @@ if __name__ == "__main__":
                 continue
             print("{}: {}".format(num, arg))
             num = num + 1
-
-
