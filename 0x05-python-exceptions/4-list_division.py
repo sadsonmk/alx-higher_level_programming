@@ -18,7 +18,7 @@ def list_division(my_list_1, my_list_2, list_length):
             else:
                 new_list.append(my_list_1[y] / my_list_2[y])
             y = y + 1
-    except:
-        pass
+    except Exception as e:
+        print(e)
     finally:
         return new_list
