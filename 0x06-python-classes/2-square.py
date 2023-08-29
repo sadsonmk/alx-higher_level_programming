@@ -1,8 +1,11 @@
 #!/usr/bin/python3
+"""Define a square class"""
+
+
 class Square:
-    '''Defines a square'''
+    """Defines a square"""
     def __init__(self, size=0):
-        '''this is a constructor function'''
+        """this is a constructor function"""
         if not isinstance(size, int):
             raise TypeError('size must be an integer')
         if size < 0:
