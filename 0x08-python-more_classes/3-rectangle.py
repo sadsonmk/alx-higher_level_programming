@@ -53,11 +53,12 @@ class Rectangle:
     def __str__(self):
         """prints the rectangle using the # symbol"""
         if self.width == 0 or self.height == 0:
-            return ''
+            return ('')
         else:
             value = []
             for x in range(self.height):
-                [value.append('#') for y in range(self.width)]
+                for y in range(self.width):
+                    value.append('#')
                 if x != self.height - 1:
                     value.append('\n')
             return("".join(value))
