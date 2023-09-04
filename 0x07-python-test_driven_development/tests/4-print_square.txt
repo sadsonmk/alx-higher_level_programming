@@ -1,0 +1,34 @@
+>>> print_square = __import__('4-print_square').print_square
+
+>>> print_square('hello')
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/root/alx-higher_level_programming/0x07-python-test_driven_development/4-print_square.py", line 16, in print_square
+    raise TypeError('size must be an integer')
+TypeError: size must be an integer
+
+>>> print_square(-8)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/root/alx-higher_level_programming/0x07-python-test_driven_development/4-print_square.py", line 18, in print_square
+    raise ValueError('size must be >= 0')
+ValueError: size must be >= 0
+
+>>> print_square(0.9)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/root/alx-higher_level_programming/0x07-python-test_driven_development/4-print_square.py", line 16, in print_square
+    raise TypeError('size must be an integer')
+TypeError: size must be an integer
+
+>>> print_square(-3.4)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/root/alx-higher_level_programming/0x07-python-test_driven_development/4-print_square.py", line 16, in print_square
+    raise TypeError('size must be an integer')
+TypeError: size must be an integer
+
+>>> print_square()
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: print_square() missing 1 required positional argument: 'size'
