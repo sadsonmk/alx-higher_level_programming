@@ -55,11 +55,11 @@ class Rectangle:
         """prints the rectangle using the # symbol"""
         if self.__width == 0 or self.__height == 0:
             return ('')
-        else:
-            value = []
-            for x in range(self.__height):
-                for y in range(self.__width):
-                    value.append('#')
-                if x != self.__height - 1:
-                    value.append('\n')
-            return("".join(value))
+
+        value = []
+        for x in range(self.__height):
+            for y in range(self.__width):
+                value.append('#')
+            if x != self.__height - 1:
+                value.append('\n')
+        return("".join(value))
