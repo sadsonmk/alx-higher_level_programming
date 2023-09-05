@@ -34,15 +34,21 @@ def matrix_mul(m_a, m_b):
                 if not isinstance(j, int) and not isinstance(j, float):
                     raise TypeError('m_b should contain only integers or\
                             floats')
+
+        new_m_b = []
+        for row in range(len(m_b[0])):
+            n_row = []
+            for col in range(len(m_b)):
+                n_row.append(m_b[col][row])
+            new_m_b.append(n_row)
+
         result_matrix = []
         for row in m_a:
-            new_row = []
-            for col in m_b:
+            n_row = []
+            for col in new_m_b:
                 res = 0
-                for x in range(len(row)):
+                for x in range(len(new_m_b[0])):
                     res += row[x] * col[x]
-                    if not isinstance(res, int) and not isinstance(res, float):
-                        raise TypeError("m_a and m_b can't be multiplied")
-                new_row.append(res)
-            result_matrix.append(new_row)
+                n_row.append(res)
+            result_matrix.append(n_row)
         return result_matrix
