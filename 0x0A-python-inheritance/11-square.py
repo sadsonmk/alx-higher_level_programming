@@ -1,0 +1,64 @@
+#!/usr/bin/python3
+"""A module containing the basegeometry class"""
+
+
+class BaseGeometry:
+    """
+    The BaseGeometry class
+    """
+
+    def area(self):
+        """a method that raises an exception"""
+
+        raise Exception("area() is not implemented")
+
+    def integer_validator(self, name, value):
+        """validates the value"""
+
+        if type(value) != int:
+            raise TypeError(f"{name} must be an integer")
+        elif value <= 0:
+            raise ValueError(f"{name} must be greater than 0")
+
+
+# Defining a rectangle class that inherits from class BaseGeometry
+class Rectangle(BaseGeometry):
+    """A rectangle class that inherits from basegeometry"""
+
+    def __init__(self, width, height):
+        """initializes attributes"""
+
+        self.__width = width
+        self.__height = height
+        self.integer_validator("width", self.__width)
+        self.integer_validator("height", self.__height)
+
+    def area(self):
+        """calculates the area of the rectangle"""
+
+        return self.__width * self.__height
+
+    def __str__(self):
+        """the string implementation of the rectangle"""
+
+        return f"[Rectangle] {self.__width}/{self.__height}"
+
+
+# Defining a square class that inherits from the rectangle class
+class Square(Rectangle):
+    """A square class that inherits from the Rectangle class"""
+
+    def __init__(self, size):
+        """Initializing attributes"""
+        self.__size = size
+        self.integer_validator("size", self.__size)
+
+    def area(self):
+        """calculates the area of the square"""
+
+        return self.__size * self.__size
+
+    def __str__(self):
+        """the string implementation of the square"""
+
+        return f"[Square] {self.__size}/{self.__size}"
