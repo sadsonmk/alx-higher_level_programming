@@ -5,6 +5,6 @@
 def read_file(filename=""):
     """a function to read a file and prints it to stdout"""
 
-    with open(filename, 'r', encoding='utf8') as f:
+    with open(filename, 'r', encoding='UTF8') as f:
         for line in f:
-            print(line)
+            print(line, end='')
