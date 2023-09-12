@@ -15,4 +15,4 @@ def save_to_json_file(my_obj, filename):
         if file_r:
             return file_r
         else:
-            return ""
+            return "\n"
