@@ -12,7 +12,4 @@ def save_to_json_file(my_obj, filename):
     obj = json.dumps(my_obj)
     with open(filename, 'w') as f:
         file_r = f.write(obj)
-        if file_r:
-            return file_r
-        else:
-            return "\n"
+        return file_r
