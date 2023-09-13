@@ -16,8 +16,7 @@ class Student:
         If attrs is a list of strings, only attribute
         names contained in this list must be retrieved.
         """
-        if (type(attrs) == str and all(type(x) == str for x in attrs)):
+        if (type(attrs) == list and all(type(x) == str for x in attrs)):
             return {key: getattr(self, key)
                     for key in attrs if hasattr(self, key)}
-        data = self.__dict__
-        return data
+        return self.__dict__
