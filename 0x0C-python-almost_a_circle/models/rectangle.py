@@ -89,11 +89,11 @@ class Rectangle(Base):
     def update(self, *args, **kwargs):
         """assigns a value to each attribute"""
         if not args and len(args) < 1:
-            self.id = kwargs['id']
-            self.width = kwargs['width']
-            self.height = kwargs['height']
-            self.x = kwargs['x']
-            self.y = kwargs['y']
+            self.id = kwargs.get('id', self.id)
+            self.width = kwargs.get('width', self.__width)
+            self.height = kwargs.get('height', self.__height)
+            self.x = kwargs.get('x', self.__x)
+            self.y = kwargs.get('y', self.__y)
         elif len(args) == 1:
             self.id = args[0]
         elif len(args) == 2:
