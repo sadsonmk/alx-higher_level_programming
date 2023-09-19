@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """module defining the rectangle class"""
 from models.base import Base
+import json
 
 
 class Rectangle(Base):
@@ -114,3 +115,8 @@ class Rectangle(Base):
             self.height = args[2]
             self.x = args[3]
             self.y = args[4]
+
+    def to_dictionary(self):
+        """returns a dictionary representation of the rectangle"""
+        return {'x': self.x, 'y': self.y, 'id': self.id, 'width': self.width,
+                'height': self.height}
