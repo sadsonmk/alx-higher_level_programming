@@ -31,10 +31,10 @@ class Base:
         if list_objs is None:
             res = "[]"
         else:
-            res = []
+            my_list = []
 
             for i in list_objs:
-                res.append(i.to_dictionary())
-            res = cls.to_json_string(my_list)
+                my_list.append(i.to_dictionary())
+                res = cls.to_json_string(my_list)
         with open(f"{my_file}.json", 'w') as f:
             f.write(res)
