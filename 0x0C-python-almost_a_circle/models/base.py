@@ -28,7 +28,7 @@ class Base:
         """writes the JSON string representation of list_objs to a file"""
 
         if list_objs is None:
-            return "[]"
+            res = "[]"
         my_file = cls.__name__
         my_list = []
 
