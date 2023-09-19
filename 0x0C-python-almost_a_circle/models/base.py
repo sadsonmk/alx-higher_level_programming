@@ -30,10 +30,10 @@ class Base:
         if list_objs is None:
             res = "[]"
         my_file = cls.__name__
-        my_list = []
+        res = []
 
         for i in list_objs:
-            my_list.append(i.to_dictionary())
+            res.append(i.to_dictionary())
         res = cls.to_json_string(my_list)
         with open(f"{my_file}.json", 'w') as f:
             f.write(res)
