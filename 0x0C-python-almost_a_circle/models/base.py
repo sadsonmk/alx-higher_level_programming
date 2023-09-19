@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """module holding the base class"""
 import json
-from pathlib import Path
+import os
 
 
 class Base:
@@ -63,8 +63,7 @@ class Base:
         my_file = "{}.json".format(cls.__name__)
         my_list = []
 
-        file_path = Path(my_file)
-        if not file_path.is_file():
+        if not os.path.exists(my_file):
             return []
         else:
             with open(my_file, 'r', encoding='UTF8') as f:
