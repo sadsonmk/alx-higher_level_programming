@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """module holding the base class"""
 import json
+from pathlib import Path
 
 
 class Base:
@@ -62,10 +63,11 @@ class Base:
         my_file = "{}.json".format(cls.__name__)
         my_list = []
 
-        if my_file is None:
+        file_path = Path(my_file)
+        if not file_path.is_file():
             return []
         else:
-            with open(my_file, 'r') as f:
+            with open(my_file, 'r', encoding='UTF8') as f:
                 result = f.read()
             res = cls.from_json_string(result)
 
