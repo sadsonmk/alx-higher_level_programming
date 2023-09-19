@@ -12,7 +12,7 @@ class Base:
         """intitializes instances of the base class"""
         if id is not None:
             self.id = id
-        else
+        else:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
 
@@ -38,7 +38,7 @@ class Base:
                 res = cls.to_json_string(my_list)
         with open(f"{my_file}.json", 'w') as f:
             f.write(res)
-    
+
     @staticmethod
     def from_json_string(json_string):
         """returns the list of the JSON string representation json_string"""
