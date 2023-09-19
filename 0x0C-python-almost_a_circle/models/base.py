@@ -50,7 +50,5 @@ class Base:
     def create(cls, **dictionary):
         """returns an instance with all attributes already set"""
         dummy_obj = cls(20, 20)
-
         dummy_obj.update(*args=None, **dictionary)
-
         return dummy_obj
