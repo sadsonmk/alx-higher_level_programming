@@ -2,6 +2,7 @@
 """module holding the base class"""
 import json
 import os
+import csv
 
 
 class Base:
@@ -74,3 +75,36 @@ class Base:
                 value = cls.create(**values)
                 my_list.append(value)
             return my_list
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """serializes in CSV"""
+        my_file = "{}.csv".format(cls.__name__)
+        with open(my_file, 'w', encoding='UTF8') as csvf:
+            if list_objs == [] or list_objs is None:
+                csvf.write('[]')
+            else:
+                if cls.__name__ == "Square":
+                    fieldnames = ["id", "size", "x", "y"]
+                else:
+                    fieldnames = ["id", "width", "height", "x", "y"]
+                write_csv = csv.DictWriter(csvf, fieldnames=fieldnames)
+                for obj in list_objs:
+                    write_csv.writerow(obj.to_dictionary())
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """deserializes a csv"""
+        my_file = "{}.csv".format(cls.__name__)
+        if not os.path.exists(my_file):
+            return []
+        else:
+            with open(my_file, 'r', encoding='UTF8') as csvf:
+                if cls.__name__ == "Square":
+                    fieldnames = ["id", "size", "x", "y"]
+                else:
+                    fieldnames = ["id", "width", "height", "x", "y"]
+                my_list = csv.DictReader(csvf, fieldnames=fieldnames)
+                my_list = [dict([j, int(k)] for j, k in m.items())
+                           for m in my_list]
+                return [cls.create(**k) for k in my_list]
