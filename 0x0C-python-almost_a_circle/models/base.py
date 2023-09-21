@@ -3,6 +3,7 @@
 import json
 import os
 import csv
+import turtle as t
 
 
 class Base:
@@ -108,3 +109,34 @@ class Base:
                 my_list = [dict([j, int(k)] for j, k in m.items())
                            for m in my_list]
                 return [cls.create(**k) for k in my_list]
+
+    @staticmethod
+    def draw(list_rectangles, list_squares):
+        """draws the square and rectangle using the turtle module"""
+        my_t = t.Screen()
+        my_t.bgcolor('blue')
+        my_t.pensize(4)
+
+        my_t.color('white')
+        for rect in list_rectangles:
+            my_t.up()
+            my_t.goto(rect.x, rect.y)
+            my_t.down()
+            for r in range(2):
+                my_t.fd(rect.width)
+                my_t.lt(90)
+                my_t.fd(rect.height)
+                my_t.lt(90)
+            my_t.ht()
+        my_t.color('yellow')
+        for sq in list_square:
+            my_t.showturtle()
+            my_t.up()
+            my_t.goto(sq.x, sq.y)
+            my_t.down()
+            for s in range(4):
+                my_t.fd(sq.width)
+                my_t.lt(90)
+            my_t.ht()
+
+        my_t.done()
