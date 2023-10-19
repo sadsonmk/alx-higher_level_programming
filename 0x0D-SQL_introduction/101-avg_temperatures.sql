@@ -1,3 +1,5 @@
 -- displays the average temperature (Fahrenheit) by city ordered by temperature (descending)
-mysql -hlocalhost -uroot -p hbtn_0c_0 < temperatures.sql
-SELECT AVG(temperature) as 'avg_temp'
+SELECT temperatures.city,  AVG(temperatures.value) AS 'avg_temp'
+FROM temperatures
+GROUP BY temperatures.city
+ORDER BY avg_temp DESC;
