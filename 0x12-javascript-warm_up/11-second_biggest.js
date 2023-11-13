@@ -4,16 +4,11 @@ const args = process.argv;
 args.shift();
 args.shift();
 
-//const mySet = new Set(args);
-const myArr = [];
-for (const elem of args) {
-  myArr.push(elem);
-}
-myArr.sort();
+args.sort();
 
-const len = myArr.length;
+const len = args.length;
 if (len === 0 || len === 1) {
   console.log(0);
 } else {
-  console.log(myArr[len - 2]);
+  console.log(args[len - 2]);
 }
