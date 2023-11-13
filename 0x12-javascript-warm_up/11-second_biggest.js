@@ -4,9 +4,9 @@ const args = process.argv;
 args.shift();
 args.shift();
 
-const mySet = new Set(args);
+//const mySet = new Set(args);
 const myArr = [];
-for (const elem of mySet) {
+for (const elem of args) {
   myArr.push(elem);
 }
 myArr.sort();
