@@ -22,7 +22,7 @@ if __name__ == '__main__':
     mycursor.executemany(sql, target)
     result = mycursor.fetchall()
 
-    db_connect.close()
-
     for city in result:
         print(city)
+    mycursor.close()
+    db_connect.close()
