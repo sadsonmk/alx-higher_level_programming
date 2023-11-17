@@ -13,7 +13,7 @@ if __name__ == '__main__':
     state = sys.argv[4]
 
     db_connect = MySQLdb.connect(host='localhost', port=3306, user=user,
-                                 passwd=password, db=database)
+                                 passwd=password, db=database, charset="utf8")
     mycursor = db_connect.cursor()
 
     sql = "SELECT * FROM states WHERE name='{}' ORDER BY id".format(state)
@@ -23,3 +23,5 @@ if __name__ == '__main__':
 
     for city in result:
         print(city)
+    mycursor.close()
+    db_connect.close()
