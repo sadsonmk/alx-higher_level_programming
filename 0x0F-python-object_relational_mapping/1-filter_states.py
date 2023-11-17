@@ -14,7 +14,7 @@ if __name__ == '__main__':
                                  passwd=password, db=database)
     mycursor = db_connect.cursor()
 
-    sql = "SELECT * FROM states WHERE name LIKE 'N%'"
+    sql = "SELECT * FROM states WHERE name LIKE 'N%' ORDER BY id"
     mycursor.execute(sql)
 
     result = mycursor.fetchall()
