@@ -12,7 +12,7 @@ if __name__ == '__main__':
                                  passwd=password, db=database)
 
     cur = db_connect.cursor()
-    sql = f"SELECT * FROM states ORDER BY id"
+    sql = "SELECT * FROM states ORDER BY id"
     cur.execute(sql)
 
     result = cur.fetchall()
