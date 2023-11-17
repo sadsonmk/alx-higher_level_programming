@@ -18,6 +18,7 @@ if __name__ == '__main__':
     mycursor.execute(sql)
 
     result = mycursor.fetchall()
+    db_connect.close()
 
     for state in result:
         print(state)
