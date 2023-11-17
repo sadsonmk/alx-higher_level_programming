@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""This is a script that lists all State objects 
+"""This is a script that lists all State objects
     that contain the letter a from the database hbtn_0e_6_usa"""
 
 import sys
@@ -17,5 +17,8 @@ if __name__ == '__main__':
     Base.metadata.create_all(engine)
 
     session = Session(bind=engine)
-    for state
+    q = session.query(State).order_by(State.id).filter(State.name.like('%a%'))
+    for state in q:
+        print('{}: {}'.format(state.id, state.name))
 
+    session.close()
