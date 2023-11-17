@@ -3,9 +3,10 @@
     of a State and an instance Base = declarative_base()"""
 
 from sqlalchemy import Column, Integer, String
-from sqlalchemy.orm import declarative_base
+from sqlalchemy.orm import declarative_base, sessionmaker
 
 Base = declarative_base()
+Session = sessionmaker()
 
 
 class State(Base):
