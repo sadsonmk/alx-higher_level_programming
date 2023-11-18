@@ -16,7 +16,7 @@ if __name__ == '__main__':
                                  passwd=password, db=database, charset="utf8")
     mycursor = db_connect.cursor()
 
-    sql = "SELECT * FROM states WHERE name='{}' ORDER BY id".format(state)
+    sql = "SELECT * FROM states WHERE name LIKE BINARY '{}'".format(state)
     mycursor.execute(sql)
 
     result = mycursor.fetchall()
