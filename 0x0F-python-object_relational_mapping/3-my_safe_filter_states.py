@@ -16,10 +16,8 @@ if __name__ == '__main__':
     db_connect = MySQLdb.connect(host='localhost', port=3306, user=user,
                                  passwd=password, db=database)
     mycursor = db_connect.cursor()
-    sql = "SELECT * FROM states WHERE name=%s ORDER BY id"
-    target = f"('{state}',)"
+    mycursor.execute("SELECT * FROM states WHERE name LIKE %s", (state,))
 
-    mycursor.executemany(sql, target)
     result = mycursor.fetchall()
 
     for city in result:
