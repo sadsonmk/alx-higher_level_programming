@@ -1,10 +1,10 @@
 #!/usr/bin/python3
 """This is a script that filters states
-listting those that start with the letter N"""
+listing those that start with the letter N"""
 
+import MySQLdb
+import sys
 if __name__ == '__main__':
-    import MySQLdb
-    import sys
 
     user = sys.argv[1]
     password = sys.argv[2]
