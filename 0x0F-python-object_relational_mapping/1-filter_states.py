@@ -15,7 +15,7 @@ if __name__ == '__main__':
                                  passwd=password, db=database, port=port)
     cur = db_connect.cursor()
 
-    sql = "SELECT * FROM states WHERE name LIKE 'N%' ORDER BY id ASC"
+    sql = "SELECT * FROM states WHERE name LIKE BINARY 'N%' ORDER BY id ASC"
     cur.execute(sql)
 
     result = cur.fetchall()
