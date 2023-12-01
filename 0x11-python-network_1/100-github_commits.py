@@ -15,6 +15,6 @@ if __name__ == '__main__':
     res = response.json()
     i = 0
     while i < 10:
-        print(f"{res[i].get('sha')}: {res[i].get('commit').get('author')
-                                      .get('name')}")
+        print("{}: {}".format(res.get('sha'),
+                              res.get('commit').get('author').get('name')))
         i = i + 1
