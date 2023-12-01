@@ -15,6 +15,9 @@ if __name__ == '__main__':
     res = response.json()
     i = 0
     while i < 10:
-        print("{}: {}".format(res.get('sha'),
-                              res.get('commit').get('author').get('name')))
+        try:
+            print("{}: {}".format(res.get('sha'),
+                                  res.get('commit').get('author').get('name')))
+        except IndexError:
+            break
         i = i + 1
