@@ -18,6 +18,6 @@ if __name__ == '__main__':
         while i < 10:
             print("{}: {}".format(res.get('sha'),
                                   res.get('commit').get('author').get('name')))
-        i = i + 1
-    except IndexError:
+            i = i + 1
+    except AttributeError:
         pass
