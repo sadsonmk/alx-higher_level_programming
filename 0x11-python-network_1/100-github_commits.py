@@ -19,5 +19,5 @@ if __name__ == '__main__':
             print("{}: {}".format(res.get('sha'),
                                   res.get('commit').get('author').get('name')))
             i = i + 1
-    except AttributeError:
+    except (AttributeError, IndexError):
         pass
