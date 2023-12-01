@@ -14,10 +14,8 @@ if __name__ == '__main__':
 
     res = response.json()
     try:
-        i = 0
-        while i < 10:
+        for i in range(10):
             print("{}: {}".format(res.get('sha'),
                                   res.get('commit').get('author').get('name')))
-            i = i + 1
     except (AttributeError, IndexError):
         pass
