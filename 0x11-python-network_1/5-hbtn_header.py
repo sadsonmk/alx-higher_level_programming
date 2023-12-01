@@ -10,6 +10,4 @@ import sys
 if __name__ == '__main__':
     url = sys.argv[1]
     response = requests.get(url)
-    for result, value in response.headers.items():
-        if value == response.headers['X-Request-Id']:
-            print(value)
+    print(response.headers.get("X-Request-Id"))
