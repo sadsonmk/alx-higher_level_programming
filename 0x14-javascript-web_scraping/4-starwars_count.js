@@ -9,9 +9,20 @@ request(url, (error, response, body) => {
   if (!error) {
     const data = JSON.parse(body);
     const dataObjs = data.results;
-
     const len = dataObjs.length;
+
     let total = 0;
+    for (let i = 0; i < len; i++) {
+      dataObjs[i].characters.filter((chars) => {
+        if (chars === charUrl) {
+          total += 1;
+        }
+        return total;
+      });
+    }
+    console.log(total);
+
+    /* let total = 0;
     for (let i = 0; i < len; i++) {
       const lenObj = dataObjs[i].characters.length;
       for (let j = 0; j < lenObj; j++) {
@@ -20,6 +31,6 @@ request(url, (error, response, body) => {
         }
       }
     }
-    console.log(total);
+    console.log(total); */
   }
 });
