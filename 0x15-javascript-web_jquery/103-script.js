@@ -2,7 +2,7 @@
 
 $(function () {
   $('#btn_translate').click(getTranslated);
-  $('language_code').keypress(function () {
+  $('#language_code').keypress(function () {
     if (event.keyCode === 13) {
       getTranslated();
     }
